@@ -37,5 +37,15 @@ function saveData() {
     localStorage.setItem("data", listContainer.innerHTML);
 }
 
+// To retrieve and display data stored in the browser
+function showTask() {
+    localStorage.innerHTML = localStorage.getItem("data");
+}
 
+showTask()
+
+// const btn = document.getElementById("btn");
+// btn.addEventListener("click", () => {
+//     addTask();
+// })
 
