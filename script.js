@@ -32,3 +32,10 @@ listContainer.addEventListener("click", function (e) {
     // console.log(e);
 }, false)
 
+// To store the entered data in the browser
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+
+
