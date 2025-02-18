@@ -99,3 +99,8 @@ listContainer.addEventListener("click", function(e) {
     }
 }, false);
 
+// Saves data to local storage
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
