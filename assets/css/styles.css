@@ -103,3 +103,13 @@ button {
     background-image: url('./images/checked.png');
 }
 
+.task-text {
+    flex: 1;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    gap: 8px;
+}
+
