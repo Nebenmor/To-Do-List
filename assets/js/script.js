@@ -53,25 +53,34 @@ listContainer.addEventListener("click", function(e) {
         li.remove();
         saveData();
     }
-    
+    // Handle edit
+    else if(e.target.className === "task-btn edit-btn") {
+        const taskText = li.querySelector(".task-text");
+        const currentText = taskText.textContent;
+        
+        // Create input field
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = currentText;
+        input.className = "edit-input";
+        
+        // Replace text with input
+        taskText.replaceWith(input);
+        input.focus();
+        
+        // Handle saving the edited text
+        input.addEventListener("blur", finishEditing);
+        input.addEventListener("keyup", function(e) {
+            if(e.key === "Enter") {
+                finishEditing.call(this);
+            }
+            if(e.key === "Escape") {
+                this.value = currentText;
+                finishEditing.call(this);
+            }
         });
         
-        function finishEditing() {
-            const newText = this.value.trim();
-            if(newText) {
-                const newSpan = document.createElement("span");
-                newSpan.className = "task-text";
-                newSpan.textContent = newText;
-                this.replaceWith(newSpan);
-            } else {
-                this.value = currentText;
-                const newSpan = document.createElement("span");
-                newSpan.className = "task-text";
-                newSpan.textContent = currentText;
-                this.replaceWith(newSpan);
-            }
-            saveData();
-        }
+        
     }
 }, false);
 
