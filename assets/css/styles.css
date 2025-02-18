@@ -95,3 +95,7 @@ button {
     color: #555;
 }
 
+.task-item.checked .task-text {
+    text-decoration: line-through;
+}
+
