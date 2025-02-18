@@ -38,3 +38,40 @@ function addTask() {
     saveData();
 }
 
+// Handle clicks on list items and buttons
+listContainer.addEventListener("click", function(e) {
+    const li = e.target.closest('.task-item');
+    if (!li) return;
+
+    // Handle task completion toggle
+    if(e.target.className === "task-text") {
+        li.classList.toggle("checked");
+        saveData();
+    }
+    // Handle delete
+    else if(e.target.className === "task-btn delete-btn") {
+        li.remove();
+        saveData();
+    }
+    
+        });
+        
+        function finishEditing() {
+            const newText = this.value.trim();
+            if(newText) {
+                const newSpan = document.createElement("span");
+                newSpan.className = "task-text";
+                newSpan.textContent = newText;
+                this.replaceWith(newSpan);
+            } else {
+                this.value = currentText;
+                const newSpan = document.createElement("span");
+                newSpan.className = "task-text";
+                newSpan.textContent = currentText;
+                this.replaceWith(newSpan);
+            }
+            saveData();
+        }
+    }
+}, false);
+
