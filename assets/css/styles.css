@@ -91,3 +91,7 @@ button {
     left: 8px;
 }
 
+.task-item.checked {
+    color: #555;
+}
+
