@@ -80,7 +80,22 @@ listContainer.addEventListener("click", function(e) {
             }
         });
         
-        
+        function finishEditing() {
+            const newText = this.value.trim();
+            if(newText) {
+                const newSpan = document.createElement("span");
+                newSpan.className = "task-text";
+                newSpan.textContent = newText;
+                this.replaceWith(newSpan);
+            } else {
+                this.value = currentText;
+                const newSpan = document.createElement("span");
+                newSpan.className = "task-text";
+                newSpan.textContent = currentText;
+                this.replaceWith(newSpan);
+            }
+            saveData();
+        }
     }
 }, false);
 
