@@ -63,3 +63,18 @@ button {
     border-radius: 40px;
 }
 
+.task-item {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
