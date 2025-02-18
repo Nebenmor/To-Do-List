@@ -128,3 +128,21 @@ button {
     background: #ff5945;
 }
 
+.edit-btn:hover {
+    background: #45a049;
+}
+
+.delete-btn:hover {
+    background: #ff4632;
+}
+
+.edit-input {
+    flex: 1;
+    border: 1px solid #edeef0;
+    outline: none;
+    background: #fff;
+    padding: 8px;
+    font-size: 17px;
+    margin-right: 8px;
+    border-radius: 5px;
+}
