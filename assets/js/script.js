@@ -104,7 +104,7 @@ function saveData() {
     localStorage.setItem("data", listContainer.innerHTML);
 }
 
-// Retrieves data saved in local storage
+// Retrieves data from local storage
 function showTask() {
     listContainer.innerHTML = localStorage.getItem("data");
 }
